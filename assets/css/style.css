@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.portfolio{
+    color: #fff;
+    background: radial-gradient(#C18A8C,#1D0903);
+}
+
+nav{
+    min-height: 10vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-size: 20px;
+}
+
+.hamburger{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1{
+    width: 35px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 10px;
+    transition: 0.3s ease-in;
+}
+
+.bar2{
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 10px;
+    transition: 0.3s ease-in;
+}
+
+.bar3{
+    width: 15px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 10px;
+    transition: 0.3s ease-in;
+}
+
+.change .bar1{
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2{
+    opacity: 0;
+}
+
+.change .bar3{
+    transform: rotate(45deg) translate(-5px, -3px);
+    width: 35px;
+}
+
+.hamburger:hover .bar2{
+    width: 35px;
+}
+
+.hamburger:hover .bar3{
+    width: 35px;
+}
+
+.page{
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 5% 1fr 1fr 1fr 5%;
+}
+
+.hero{
+    overflow: hidden;
+    height: 500;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    filter: drop-shadow(8px 8px 10px #212121);
+    transition-delay: 0.5s;
+}
+
+.hero img{
+    height: 500px;
+    transition: transform 0.5s ease-in;
+    cursor: pointer;
+}
+
+.model-left{
+    transform: translate(0%, -10%)
+}
+
+.hero:hover .model-left{
+    transform: translate(0%, 0%)
+}
+
+.model-right{
+    transform: translate(0%, 10%)
+}
+
+.hero:hover .model-right{
+    transform: translate(0%, 0%)
+}
+
+.details{
+    grid-column: 4/5;
+    align-self: center;
+    justify-self: center;
+    writing-mode: vertical-lr;
+    padding-right: 100px;
+}
+
+.details h1{
+    font-size: 54px;
+    font-weight: 300;
+}
+
+.details h2{
+    font-size: 40px;
+}
+
+.text{
+    grid-column: 2/3;
+    align-self: center;
+    justify-self: center;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.pages{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pages .circle{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.pages > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pages h3{
+    font-size: 18px;
+    padding: 10px
+}
+
+.pages .circle{
+    cursor: pointer;
+    opacity: 0.5;
+    transform: scale(1.5);
+}
+
+.pages .circle:hover{
+    animation: dot 0.5s ease-in-out infinite alternate;
+}
+
+.pages .circle.active{
+    opacity: 1;
+}
+
+@keyframes dot{
+    0%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(2.5);
+    }
+}
+
+@media (max-width: 1200px){
+    .details{
+        justify-self: flex-end;
+    }
+}
+
+@media (max-width: 1024px){
+    .page{
+        grid-template-columns: 5% 1fr 1fr 5%;
+    }
+    .hero{
+        grid-column: 2/3;
+        align-self: center;
+        justify-self: flex-end;
+    }
+    .details{
+        grid-column: 3/4;
+        padding: 0;
+        justify-self: center;
+    }
+    .text{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .page{
+        grid-template-columns: 5% 2fr 1fr 5%;
+        min-height: 70vh;
+    }
+    .hero{
+        justify-self: center;
+    }
+    .details{
+        justify-self: flex-start;
+    }
+}
+
+@media (max-width: 600px){
+    .page{
+        min-height: 45vh;
+    }
+    .details{
+        justify-self: center;
+    }
+    .details h1{
+        font-size: 30px;
+    }
+    .details h2{
+        font-size: 22px;
+    }
+    .hero{
+        height: auto;
+    }
+    .hero img{
+        height: 300px;
+    }
+    .pages{
+        display: none;
+    }
+}
